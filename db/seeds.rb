@@ -16,4 +16,4 @@ name:"Summer event", description: "Sun, water and food", location: "seaside", pr
 
 puts miriam
 # puts mich.name
-miriam.events.each { |event| puts event.name}
+miriam.events.each { |event| puts event.id}
