@@ -66,3 +66,6 @@ gem 'jquery-rails', '~> 4.3.1'
 
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
+
+gem 'factory_girl_rails', '4.7.0'
+gem 'faker', '1.6.6'

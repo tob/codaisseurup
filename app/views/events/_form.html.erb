@@ -6,6 +6,9 @@
     <label>Event Description</label>
     <%= f.text_field :description, prompt: "What is it about? Describe in few words", class: "form-input" %>
   </div>
+  <% @event.description.errors.full_messages.each do |error| %>
+<p><%= %> </p>
+  <% end %>
 
   <div class="form-group">
     <label>Number of People</label>
@@ -14,9 +17,12 @@
 
 
   <div class="form-group">
-    <label>Price</label>
-    <%= f.text_field :price, prompt: "How much it costs?", class: "form-control" %>
-  </div>
+     <label>Price</label>
+     <div class="input-group">
+       <div class="input-group-addon">€</div>
+       <%= f.number_field :price, placeholder: "eg. 100", class: "form-control" %>
+     </div>
+   </div>
 
   <label>Amenities</label>
 
