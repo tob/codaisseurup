@@ -69,7 +69,13 @@ gem 'jquery-rails', '~> 4.3.1'
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
 
+#tests
 gem 'factory_girl_rails', '4.7.0'
 gem 'faker', '1.6.6'
+
+#app deployment
 gem 'rails_12factor', group: :production
+
+#image uploader
 gem 'carrierwave', '0.11.2'
+gem 'cloudinary', '1.2.3'
