@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Photo.delete_all
-Theme.delete_all
-Event.delete_all
-Profile.delete_all
-User.delete_all
+Photo.destroy_all
+Theme.destroy_all
+Event.destroy_all
+Profile.destroy_all
+User.destroy_all
 
 
 modern_and_minimal = Theme.create(name: "Modern and Minimal")
@@ -22,14 +22,10 @@ a_mans_touch = Theme.create(name: "A Man's Touch")
 white_washed = Theme.create(name: "White Washed")
 tempting_terrace = Theme.create(name: "Tempting Terrace")
 
-miriam = User.create(email: "miriam@codaisseurbnb.com", password: "abcd1234")
+miriam = User.create(email: "test@test.com", password: "testtest")
 
 mich = Event.create(
 name:"Summer event", description: "Sun, water and food", location: "seaside", price: 12.50, capacity: 134, includes_food: true, includes_drinks: true, active: true, user: miriam, themes: [modern_and_minimal, sleek_and_sophisticated],starts_at: 0, ends_at: 0,)
-
-puts miriam
-# puts mich.name
-miriam.events.each { |event| puts event.id}
 
 # Photos
 photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/image/upload/v1499336038/sample.jpg", event: mich)
@@ -42,4 +38,15 @@ photo6 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/im
 
 photo7 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/image/upload/v1499336038/sample.jpg", event: mich)
 photo8 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/image/upload/v1499336038/sample.jpg", event: mich)
-photo9 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/image/upload/v1499336038/sample.jpg", event: mich)
+photo9 = Photo.create!(remote_image_url: "http://i.ebayimg.com/00/s/MjU3WDMwMA==/z/AH0AAOSwEK9UA8uy/$_35.JPG", event: mich)
+
+puts miriam
+# puts mich.name
+miriam.events.each { |event| puts event.photos}
+miriam.events.each { |event| puts event.id}
+
+miriam.events.each do |event|
+  event.photos.each do |photo|
+    puts photo.image
+  end
+end

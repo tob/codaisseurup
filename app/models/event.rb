@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :themes
   has_many :photos
-
+  
   validates :name, presence: true
   validates :description, presence: true, length: { maximum: 500 }
   # validates :location, presence: true
@@ -13,4 +13,7 @@ class Event < ApplicationRecord
   # validates :starts_at, presence: true, if: :starts_at < :ends_at
   # validates :ends_at, presence: true
   # validates :active, presence: true
+
+
+
 end
