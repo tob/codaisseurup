@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :event do
-    home_type         "House"
-    event_type         "Shared"
+    name         "Test"
+    description         "Test event description"
     capacity       2
     price             { Faker::Commerce.price }
     user              { build(:user) }

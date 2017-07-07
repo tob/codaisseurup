@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Photo.destroy_all
+Booking.destroy_all
 Theme.destroy_all
 Event.destroy_all
 Profile.destroy_all
@@ -39,6 +40,11 @@ photo6 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/im
 photo7 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/image/upload/v1499336038/sample.jpg", event: mich)
 photo8 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/image/upload/v1499336038/sample.jpg", event: mich)
 photo9 = Photo.create!(remote_image_url: "http://i.ebayimg.com/00/s/MjU3WDMwMA==/z/AH0AAOSwEK9UA8uy/$_35.JPG", event: mich)
+
+#bookings
+Booking.create(event: event1, user: wouter, price: 50, total: 100, starts_at: 10.days.from_now, ends_at: 12.days.from_now)
+Booking.create(event: event2, user: matt, price: 50, total: 200, starts_at: 20.days.from_now, ends_at: 24.days.from_now)
+
 
 puts miriam
 # puts mich.name
