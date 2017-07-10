@@ -1,0 +1,23 @@
+<%= form_for [@event, @event.bookings.new] do |f| %>
+  <p><strong>Ticket Price:</strong> <span>€</span> <%= @event.price %></p>
+
+  <hr>
+
+  <div class="form-group">
+    <label>Number of guests :</label>
+    <%= f.select :guests, (0..10) %>
+  </div>
+
+  <%= f.hidden_field :event_id, value: @event.id %>
+  <%= f.hidden_field :price, value: @event.price %>
+
+  <div class="form-group">
+    <label>Total price :</label>
+    <%= @event.price*:f.guests %>
+  </div>
+  <hr>
+
+  <div class="actions">
+    <%= f.submit "Book Now", class: "btn btn-success" %>
+  </div>
+<% end %>

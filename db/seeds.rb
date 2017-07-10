@@ -42,8 +42,8 @@ photo8 = Photo.create!(remote_image_url: "http://res.cloudinary.com/djxbktwxl/im
 photo9 = Photo.create!(remote_image_url: "http://i.ebayimg.com/00/s/MjU3WDMwMA==/z/AH0AAOSwEK9UA8uy/$_35.JPG", event: mich)
 
 #bookings
-Booking.create(event: event1, user: wouter, price: 50, total: 100, starts_at: 10.days.from_now, ends_at: 12.days.from_now)
-Booking.create(event: event2, user: matt, price: 50, total: 200, starts_at: 20.days.from_now, ends_at: 24.days.from_now)
+Booking.create(event: mich, user: miriam, price: 50, guests: 100)
+Booking.create(event: mich, user: matt, price: 50, guests: 200)
 
 
 puts miriam

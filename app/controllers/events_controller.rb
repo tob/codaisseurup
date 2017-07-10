@@ -49,6 +49,13 @@ class EventsController < ApplicationController
      end
    end
 
+#used to order events
+  def alphabetical
+    order(ASC)
+  end
+
+
+
    private
 
    def set_event

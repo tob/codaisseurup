@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :themes
-  root to: 'pages#home'
+  root to: 'pages#index'
 
   devise_for :users
 
@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :events do
       resources :bookings, only: [:create]
     end
+
+  namespace :api do
+   resources :events, except: [:destroy]
+ end
 end

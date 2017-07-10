@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :event do
     name         "Test"
-    description         "Test event description"
+    description  "Test event description"
     capacity       2
     price             { Faker::Commerce.price }
     user              { build(:user) }
